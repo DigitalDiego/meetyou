@@ -1,0 +1,736 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #006478;
+}
+
+body a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1em;
+  border-bottom: 1px solid aquamarine;
+  background: #006478;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-family: "Pacifico", sans-serif;
+  color: aquamarine;
+  cursor: pointer;
+}
+
+header nav {
+  display: none;
+}
+
+header .side-menu-btn {
+  width: 1.2em;
+  height: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+}
+
+header .side-menu-btn div {
+  width: 100%;
+  height: 2px;
+  background: aquamarine;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.active-side-menu-btn .bar-one {
+  -webkit-transform: rotate(45deg) translateY(10px);
+          transform: rotate(45deg) translateY(10px);
+}
+
+.active-side-menu-btn .bar-two {
+  opacity: 0;
+}
+
+.active-side-menu-btn .bar-three {
+  -webkit-transform: rotate(-45deg) translateY(-10px);
+          transform: rotate(-45deg) translateY(-10px);
+}
+
+.side-menu {
+  position: fixed;
+  top: 10vh;
+  width: 100%;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 1em;
+  background: aquamarine;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  opacity: 0;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  z-index: 2000;
+}
+
+.side-menu i {
+  margin-right: 1em;
+}
+
+.side-menu a {
+  color: #006478;
+  margin: 2em 0;
+  font-size: 1.5em;
+}
+
+.side-menu a:hover {
+  font-weight: bold;
+}
+
+.active-side-menu {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
+.display-section {
+  width: 100%;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #006478;
+  position: fixed;
+  top: 10vh;
+  right: 0;
+  border-bottom: 1px solid aquamarine;
+  -webkit-box-shadow: 0px 1px 10px rgba(45, 54, 68, 0.5);
+          box-shadow: 0px 1px 10px rgba(45, 54, 68, 0.5);
+}
+
+.display-section div {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.display-section div h1 {
+  font-size: 1.8em;
+}
+
+.display-section div h1 i {
+  color: aquamarine;
+  cursor: pointer;
+}
+
+.friends-section {
+  width: 100%;
+  height: 80vh;
+  position: fixed;
+  top: 20vh;
+  right: 0;
+  padding: 1em 1em 0 1em;
+  overflow: hidden;
+  overflow-y: scroll;
+  display: none;
+}
+
+.friends-section::-webkit-scrollbar {
+  width: 5px;
+}
+
+.friends-section::-webkit-scrollbar-track {
+  border: none;
+  background: #006478;
+}
+
+.friends-section::-webkit-scrollbar-thumb {
+  background: aquamarine;
+  border-radius: 20px;
+}
+
+.friends-section .friend {
+  width: 100%;
+  background: aquamarine;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50px;
+  overflow: hidden;
+  padding: 0.2em;
+  margin-bottom: 1em;
+}
+
+.friends-section .friend .friend-image {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #006478;
+}
+
+.friends-section .friend .friend-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.friends-section .friend .friend-name {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 80%;
+}
+
+.friends-section .friend .friend-name p {
+  font-size: 1.2em;
+  color: #006478;
+  font-weight: bold;
+}
+
+.friends-section .friend .status-div {
+  width: 3em;
+  height: 3em;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.friends-section .friend .status-div .status {
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 50%;
+  background: limegreen;
+}
+
+.feed {
+  width: 100%;
+  height: 80vh;
+  position: fixed;
+  top: 20vh;
+  right: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 1em 1em 0 1em;
+}
+
+.feed::-webkit-scrollbar {
+  width: 5px;
+}
+
+.feed::-webkit-scrollbar-track {
+  border: none;
+  background: #006478;
+}
+
+.feed::-webkit-scrollbar-thumb {
+  background: aquamarine;
+  border-radius: 20px;
+}
+
+.feed .post {
+  width: 100%;
+  border: 2px solid aquamarine;
+  background: #fff;
+  padding: 0.2em;
+  border-radius: 20px;
+  margin-bottom: 1em;
+}
+
+.feed .post .top-row {
+  width: 100%;
+  height: 2.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.feed .post .top-row .image {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #006478;
+  margin-right: 1em;
+  display: -ms-grid;
+  display: grid;
+}
+
+.feed .post .top-row .image i {
+  place-self: center;
+}
+
+.feed .post .top-row .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.feed .post .top-row p {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.feed .post .content {
+  width: 100%;
+  min-height: 3.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.feed .post .bottom-row {
+  width: 100%;
+  height: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.feed .post .bottom-row div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.feed .post .bottom-row div i {
+  margin-left: 0.8em;
+}
+
+.feed .post .bottom-row div p {
+  margin-left: 0.2em;
+}
+
+.post-section {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 100vh;
+  background: rgba(128, 255, 212, 0.8);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.post-section i {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  color: #006478;
+  cursor: pointer;
+}
+
+.post-section input {
+  margin-bottom: 1em;
+  padding: 0.2em 1em;
+  border: 2px solid #006478;
+  border-radius: 20px;
+  outline: none;
+}
+
+.post-section textarea {
+  width: 80%;
+  height: 10em;
+  margin-bottom: 1em;
+  resize: none;
+  border-radius: 20px;
+  padding: 1em 0.5em;
+  outline: none;
+  border: 2px solid #006478;
+}
+
+.post-section button {
+  padding: 0.1em 2em;
+  border-radius: 20px;
+  border: 2px solid #006478;
+  background: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.post-section button:hover {
+  background: #006478;
+  color: #fff;
+}
+
+.find-friends-section {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 100vh;
+  background: rgba(128, 255, 212, 0.8);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: 1em 1em 0 1em;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.find-friends-section .fa-times {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  color: #006478;
+  cursor: pointer;
+}
+
+.find-friends-section .friend {
+  width: 100%;
+  background: #006478;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50px;
+  overflow: hidden;
+  padding: 0.2em;
+  margin-bottom: 1em;
+}
+
+.find-friends-section .friend .friend-image {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid aquamarine;
+}
+
+.find-friends-section .friend .friend-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.find-friends-section .friend .friend-name {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 80%;
+}
+
+.find-friends-section .friend .friend-name p {
+  font-size: 1.2em;
+  color: aquamarine;
+  font-weight: bold;
+}
+
+.find-friends-section .friend .status-div {
+  width: 3em;
+  height: 3em;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.find-friends-section .friend .status-div i {
+  color: aquamarine;
+  cursor: pointer;
+}
+
+.none {
+  display: none;
+}
+
+.notifications-section {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2000;
+  padding: 1em;
+  width: 100%;
+  height: 100vh;
+  background: rgba(128, 255, 212, 0.8);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.notifications-section .close-notifications-section-btn {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  color: #006478;
+  cursor: pointer;
+}
+
+.notifications-section .noti {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  background: #fff;
+  height: 4em;
+  border-radius: 20px;
+  border: 2px solid #006478;
+  margin: 0.5em 0;
+}
+
+.notifications-section .noti .content {
+  width: 80%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notifications-section .noti .icon {
+  width: 20%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #006478;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 700px) {
+  header {
+    height: 15vh;
+  }
+  header h1 {
+    font-size: 3em;
+  }
+  header nav {
+    display: inline-block;
+  }
+  header nav a {
+    margin-left: 1em;
+    color: aquamarine;
+    font-weight: bold;
+  }
+  header .side-menu-btn {
+    display: none;
+  }
+  .display-section {
+    display: none;
+  }
+  .friends-section {
+    display: inline-block;
+    position: fixed;
+    top: 15vh;
+    left: 0;
+    width: 20%;
+    height: 85vh;
+    border-right: 1px solid aquamarine;
+  }
+  .friends-section .friend {
+    height: 2.5em;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .friends-section .friend .friend-image {
+    width: 2.2em;
+    height: 2.2em;
+  }
+  .friends-section .friend .friend-name {
+    width: 50%;
+  }
+  .friends-section .friend .friend-name p {
+    font-size: 1em;
+  }
+  .feed {
+    width: 60%;
+    height: 85vh;
+    position: fixed;
+    top: 15vh;
+    left: 20%;
+    border-right: 1px solid aquamarine;
+  }
+  .feed .post {
+    width: 90%;
+    margin: 0 auto 1em auto;
+  }
+  .find-friends-section {
+    display: inline-block;
+    position: fixed;
+    top: 15vh;
+    right: 0;
+    width: 20%;
+    height: 85vh;
+    background: transparent;
+    z-index: 1000;
+  }
+  .find-friends-section .fa-times {
+    display: none;
+  }
+  .find-friends-section .friend {
+    height: 2.5em;
+    background: aquamarine;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .find-friends-section .friend .friend-image {
+    width: 2.2em;
+    height: 2.2em;
+    border-color: #112233;
+  }
+  .find-friends-section .friend .friend-name {
+    width: 50%;
+  }
+  .find-friends-section .friend .friend-name p {
+    color: #006478;
+    font-size: 1em;
+  }
+  .find-friends-section .friend .status-div i {
+    color: #006478;
+  }
+  .notifications-section .noti {
+    width: 30%;
+    border-radius: 50px;
+  }
+  .post-section textarea {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  header {
+    height: 10vh;
+    padding: 0 1em;
+  }
+  header h1 {
+    font-size: 3.2em;
+  }
+  header nav a {
+    margin-left: 2em;
+    font-size: 1.1em;
+  }
+  .friends-section,
+  .feed,
+  .find-friends-section {
+    top: 10vh;
+    height: 90vh;
+  }
+  .feed .post {
+    width: 80%;
+  }
+  .post-section input {
+    padding: 0.1em 2em;
+    font-size: 1em;
+  }
+  .post-section textarea {
+    width: 30%;
+    padding: 1em;
+    font-size: 1em;
+  }
+  .post-section button {
+    padding: 0.2em 2em;
+    font-size: 1em;
+  }
+}
+/*# sourceMappingURL=style.css.map */

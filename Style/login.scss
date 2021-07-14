@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  background: rgb(0, 100, 120);
+  display: flex;
+  flex-direction: column;
+}
+.top-row {
+  width: 100%;
+  height: 30%;
+  display: grid;
+  place-items: center;
+  h1 {
+    text-align: center;
+    font-size: 5em;
+    font-family: "Pacifico", sans-serif;
+    color: aquamarine;
+  }
+  button {
+    display: none;
+  }
+}
+.container {
+  height: 70%;
+  .left-col {
+    display: none;
+  }
+  .right-col {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 5em;
+    form {
+      width: 100%;
+      height: 100%;
+      border: 5px solid aquamarine;
+      padding: 1em;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      input,
+      button {
+        width: 100%;
+        padding: 0.2em 1em;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+      }
+      .email,
+      .password {
+        margin-bottom: 1em;
+        width: 100%;
+        border: 2px solid aquamarine;
+        background: #fff;
+        border-radius: 20px;
+      }
+      button {
+        width: unset;
+        border: 2px solid aquamarine;
+        border-radius: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        background: #fff;
+        &:hover {
+          background: rgb(0, 100, 120);
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 700px) {
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+    height: 15vh;
+    h1 {
+      text-align: left;
+      font-size: 3em;
+    }
+    button {
+      display: unset;
+      padding: 0.5em 1em;
+      font-family: "Montserrat", sans-serif;
+      background: #fff;
+      border: 2px solid aquamarine;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      &:hover {
+        background: rgb(0, 100, 120);
+        color: #fff;
+      }
+    }
+  }
+  .container {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    padding: 0 2em;
+    .left-col {
+      display: flex;
+      align-items: center;
+      line-height: 2em;
+      font-size: 1.2em;
+      color: aquamarine;
+    }
+    .right-col {
+      padding: 8em 0 8em 2em;
+      form {
+        .email,
+        .password {
+          margin-bottom: 2.5em;
+        }
+        input,
+        button {
+          padding: 0.5em 1em;
+        }
+        button {
+          padding: 0.5em 3em;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .top-row {
+    h1 {
+      font-size: 5em;
+    }
+    button {
+      padding: 0.5em 2em;
+      font-size: 1em;
+    }
+  }
+  .container {
+    .right-col {
+      form {
+        width: 30em;
+        height: 25em;
+      }
+    }
+  }
+}
