@@ -404,8 +404,8 @@ header .side-menu-btn div {
 }
 
 .post-section textarea {
-  width: 80%;
-  height: 10em;
+  width: 90%;
+  height: 11em;
   margin-bottom: 1em;
   resize: none;
   border-radius: 20px;
@@ -421,6 +421,7 @@ header .side-menu-btn div {
   background: #fff;
   font-weight: bold;
   cursor: pointer;
+  font-size: 1em;
 }
 
 .post-section button:hover {
