@@ -11,7 +11,7 @@ const logIn = () => {
     const rightEmail = 'admin@meetyou.com';
     const rightPassword = 'user2021';
     if(email.value === rightEmail && password.value === rightPassword){
-        window.close();
+        window.close('login.html');
         window.open('home.html');
     } else {
         alert('Email or password is incorrect.');
