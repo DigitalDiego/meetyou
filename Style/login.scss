@@ -113,6 +113,11 @@ body {
   }
 }
 @media only screen and (min-width: 800px) {
+  .answers {
+    p {
+      font-size: 1.5em;
+    }
+  }
   .top-row {
     display: flex;
     justify-content: space-between;
