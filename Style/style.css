@@ -400,6 +400,7 @@ header .side-menu-btn div {
   border: 2px solid #006478;
   border-radius: 20px;
   outline: none;
+  font-size: 1em;
 }
 
 .post-section textarea {
