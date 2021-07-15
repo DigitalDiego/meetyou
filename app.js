@@ -193,6 +193,6 @@ navPost.addEventListener('click', () => {
     postSection.style.display = 'flex';
 })
 navLogout.addEventListener('click', () => {
+    window.close('home.html');
     window.open('login.html');
-    window.close();
 });
