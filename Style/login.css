@@ -71,7 +71,7 @@ body {
 
 .top-row h1 {
   text-align: center;
-  font-size: 5em;
+  font-size: 4em;
   font-family: "Pacifico", sans-serif;
   color: aquamarine;
 }
@@ -91,7 +91,7 @@ body {
 
 .container .right-col {
   width: 100%;
-  height: 100%;
+  height: 80%;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -221,6 +221,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
     padding: 0;
+    height: 100%;
   }
   .container .right-col form {
     height: 55%;
