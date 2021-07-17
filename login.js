@@ -19,4 +19,19 @@ const logIn = () => {
         password.value = '';
     }
 }
+const logInMethodTwo = (key) => {
+    if(key.keyCode == '13'){
+        const rightEmail = 'admin@meetyou.com';
+        const rightPassword = 'user2021';
+        if(email.value === rightEmail && password.value === rightPassword){
+            window.close('login.html');
+            window.open('home.html');
+        } else {
+            alert('Email or password is incorrect.');
+            email.value = '';
+            password.value = '';
+        };
+    };
+};
 loginBtn.addEventListener('click', logIn);
+window.addEventListener('keypress', logInMethodTwo)
