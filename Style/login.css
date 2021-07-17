@@ -208,9 +208,22 @@ body {
     line-height: 2em;
     font-size: 1.2em;
     color: aquamarine;
+    padding-right: 1em;
   }
   .container .right-col {
-    padding: 8em 0 8em 2em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+  }
+  .container .right-col form {
+    height: 55%;
   }
   .container .right-col form .email,
   .container .right-col form .password {
@@ -226,12 +239,26 @@ body {
 }
 
 @media only screen and (min-width: 1800px) {
+  .answers p {
+    font-size: 2em;
+  }
   .top-row h1 {
     font-size: 5em;
   }
   .top-row button {
     padding: 0.5em 2em;
     font-size: 1em;
+  }
+  .container .right-col {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .container .right-col form {
     width: 30em;
